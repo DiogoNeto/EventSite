@@ -1,0 +1,35 @@
+﻿@model EventDAL.Model.TBL_NEWS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br /><br />
+<div class="col-md-offset-3 col-md-6" style="background-color:#EBEBEB">
+
+    <br />
+    <h2><b>@Html.DisplayFor(model => model.TITLE)</b></h2><br />
+
+    <div class="panel-primary">
+        @if (Model.IMAGES != null)
+        {
+            var base64 = Convert.ToBase64String(Model.IMAGES);
+            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+            <div style="height:100%">
+                <img src="@imgSrc" class="img-responsive" id="detailsImage" style="align-self:center" />
+            </div>
+        }
+    </div>
+    <br />
+    <h4><b>@Html.DisplayFor(model => model.SUB_TITLE)</b></h4>
+
+    <small>@Html.DisplayFor(model => model.LAST_UPDT)</small><br /><br />
+
+    <p class="text-justify">@Html.DisplayFor(model => model.TEXT_DESCRIPTION)</p><br />
+
+    @*<small style="color:#333333">Fonte:</small>
+    <a>@Html.DisplayFor(model => model.URL)</a><br /><br />*@
+
+</div>
+
+

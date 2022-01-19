@@ -1,0 +1,52 @@
+﻿@model List<EventDAL.Model.TBL_NEWS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<meta name="news" content="Hovhannes Bantikyan" />
+
+<link href="@Url.Content("~/Content/site.css")" rel="stylesheet" type="text/css" />
+
+
+<br />
+<h2 class="pageTitle container">NOTÍCIAS</h2>
+<br />
+
+<div id="bookListDiv">
+
+
+    @{Html.RenderAction("NewsList", "NewsScroll", new { Model = Model });}
+
+
+</div>
+
+<div id="loadingDiv" style="text-align: center; display: none; margin-bottom: 20px;">
+    <img alt="Loading" src="@Url.Content("~/Content/images/ajax-loader.gif")" />
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    var BlockNumber = 2;  //Infinite Scroll starts from second block
+    var NoMoreData = false;
+    var inProgress = false;
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() == $(document).height() - $(window).height() && !NoMoreData && !inProgress) {
+
+            inProgress = true;
+            $("#loadingDiv").show();
+
+            $.post("@Url.Action("InfinateScroll", "NewsScroll")", { "id": @ViewBag.eventId,"BlockNumber": BlockNumber },
+                    function (data) {
+
+                        BlockNumber = BlockNumber + 1;
+                        NoMoreData = data.NoMoreData;
+
+                        $("#bookListDiv").append(data.HTMLString);
+                        $("#loadingDiv").hide();
+                        inProgress = false;
+                    });
+        }
+    });
+</script>

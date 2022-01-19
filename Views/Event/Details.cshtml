@@ -1,0 +1,147 @@
+﻿@model EventDAL.Model.TBL_EVENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TBL_EVENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED_BY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LAST_UPDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAST_UPDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LAST_UPDT_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAST_UPDT_BY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EFF_FROM_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EFF_FROM_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EFF_TO_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EFF_TO_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DELETED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DELETED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SMALL_DESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SMALL_DESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAMPLING)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAMPLING)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEL_POINT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEL_POINT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CERTIFICATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CERTIFICATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANDROID_API_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANDROID_API_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TBL_LANGUAGE.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TBL_LANGUAGE.NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Notícias", "../News/Index/", new { id = Model.ROW_ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ROW_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

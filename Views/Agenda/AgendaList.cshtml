@@ -1,0 +1,13 @@
+﻿@model IEnumerable<EventDAL.Model.TBL_AGENDA>
+
+
+@foreach (var item in Model)
+{
+    
+    <div style="height: 150px; background-color: #F3F3F3; margin-bottom: 30px;">
+        <div style="padding: 30px; font-size: 25px; color: #7b4f9d">@Html.ActionLink(item.TITLE, "Details", new { id = item.ROW_ID }) @*@item.TITLE*@</div>
+        <div style="padding-left: 30px; font-size: 18px;">@item.TEXT_DESCRIPTION</div>
+        <div style="padding-left: 30px; font-size: 18px;">@item.DATA</div>
+    </div>
+
+}

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EventDAL.Model.TBL_EVENT>
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = "EventSite";
+}
+
+<h2 class="pageTitle">Eventos</h2>
+<br />
+
+
+<table class="table breadcrumb img-rounded">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <h4>@Html.ActionLink(item.NAME, "../NewsScroll/Index/", new { id = item.ROW_ID })</h4>
+            </td>
+        </tr>
+    }
+
+</table>

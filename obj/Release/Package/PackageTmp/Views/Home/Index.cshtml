@@ -1,0 +1,39 @@
+﻿@model EventSite.Models.ErrorModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = "EventSite";
+}
+
+<div style="padding-top:10px">
+
+    <div class="pull-right">
+        <img class="img-rounded" src="~/Content/images/worldit.png" />
+    </div>
+    <span style="text-align:center">
+        <img class="img-rounded" src="~/Content/images/login_image.png" width="380" style="margin-top:70px;vertical-align:middle" />
+    </span>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        if (ViewBag.MESSAGE == null)
+        {
+            <div class="form-group">
+                @*@Html.DropDownList("Event_ID", new SelectList(ViewBag.Event_IDD, "Value", "Text", "Not Selected"), new { @class = "form-control", autofocus = "true" })*@
+                @Html.ValidationMessageFor(model => model.Message)
+            </div>
+            @*<input type="submit" value="Entrar" class="btn btnOrange" />*@
+        <button type="button" class="btn-primary">@Html.ActionLink("Entrar", "Index", "Event", null, new { @class = "btnOrange" }) </button>
+    @*<div class="btn btn-success" style="color:#EBEBEB; background-color:#EBEBEB; width:45px">
+        @Html.ActionLink("Entrar", "Index", "Event", null, new { @class = "btnOrange" })
+    </div>*@
+        }
+        else
+        {
+            <h4>@ViewBag.MESSAGE</h4>
+            @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btnOrange" })
+
+        }
+    }
+</div>

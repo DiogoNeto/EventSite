@@ -1,0 +1,86 @@
+﻿@model IEnumerable<EventDAL.Model.TBL_NEWS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    ViewBag.Title = EventDAL.ModelAux.Constants.newsControllerName;
+    //var session = (BackOffice.Models.SessionModel)HttpContext.Current.Session["sessionmodel"];
+    var requestLang = Request.QueryString["lang"] != null ? Request.QueryString["lang"].ToString() : "";
+}
+<br />
+<h2 class="pageTitle container">Notícias</h2>
+<br />
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12" style="height:300px">
+        <div class="img-rounded img-responsive"  style="height:280px; width:330px; margin:auto; background-color:#ffffff;">
+            @if (item.IMAGES != null)
+            {
+                var base64 = Convert.ToBase64String(item.IMAGES);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                <div style="max-height:220px; overflow:hidden" class="img-responsive img-rounded">
+                    <img style="z-index:10; height:100%; position:relative; width:330px; overflow:hidden" src="@imgSrc" id="detailsImage" />
+                </div>
+            }
+            
+            <div class="img-responsive" style="z-index:100; display:block; margin:auto; padding-left:5px; position:absolute; left:15px; right:15px; max-width:330px; max-height:100px; bottom:30px; overflow:hidden; background-color:#ffffff;">
+                <h3 class="bottom">@Html.ActionLink(item.TITLE, "Details", new { id = item.ROW_ID })</h3>
+                @Html.DisplayFor(modelItem => item.SUB_TITLE)<br />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-11">
+        @if (ViewBag.NUMBER_OF_PAGES != null)
+        {
+            <ul class="pagination">
+                @if (ViewBag.PAGE == 0)
+                {
+                    <li class="previous disabled"><a href="#">Previous</a></li>
+                }
+                else
+                {
+                    <li class="previous">
+                        <a href="@Url.Action("Index", new { page = ViewBag.PAGE - 1, order = ViewBag.ORDER, filter = ViewBag.FILTER,lang = requestLang })">Previous</a>
+                    </li>
+                }
+
+                @for (int i = 0; i <= ViewBag.NUMBER_OF_PAGES; i++)
+                {
+                    if (i == ViewBag.PAGE)
+                    {
+                        <li class="active">
+                            <a href="#">@i</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@Url.Action("Index", new { page = i, order = ViewBag.ORDER, filter = ViewBag.FILTER, lang = requestLang })">@i</a>
+                        </li>
+                    }
+
+                }
+                @if (ViewBag.PAGE < ViewBag.NUMBER_OF_PAGES)
+                {
+                    <li class="next">
+                        <a href="@Url.Action("Index", new {page = ViewBag.PAGE + 1, order = ViewBag.ORDER, filter = ViewBag.FILTER, lang = requestLang })">Next</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="next disabled">
+                        <a href="#">Next</a>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,143 @@
+﻿@model EventDAL.Model.TBL_AGENDA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.TITLE)</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.DATA)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED_BY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LAST_UPDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAST_UPDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LAST_UPDT_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAST_UPDT_BY)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TEXT_DESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEXT_DESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EFF_FROM_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EFF_FROM_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EFF_TO_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EFF_TO_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DELETED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DELETED)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOCAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOCAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HORARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HORARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTION_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTION_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LINK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LINK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TBL_EVENT.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TBL_EVENT.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TBL_LANGUAGE.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TBL_LANGUAGE.NAME)
+        </dd>
+
+    </dl>
+</div>
+

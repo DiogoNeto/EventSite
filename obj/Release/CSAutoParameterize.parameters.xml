@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="EVENT_DBEntities-Web.config Connection String" description="EVENT_DBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Model.ModelEvent.csdl|res://*/Model.ModelEvent.ssdl|res://*/Model.ModelEvent.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost;initial catalog=EVENT_DB;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Diogo\\Documents\\Events\\trunk\\EventSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EVENT_DBEntities']/@connectionString" />
+  </parameter>
+</parameters>
